@@ -123,7 +123,7 @@ if(isset($_POST['username']))
 <div class="row">
 <div class="col-lg">
 <center>
-<form method="POST" action="" class="form-inline" style="margin-top: 1.5rem;">
+<form method="POST" action="" style="margin-top: 1.5rem;">
   <div class="form-group">
     <input type="Username" id="inputUsername6" class="form-control mx-sm-3" name="username" aria-describedby="UsernameHelpInline">
     <button type="submit" class="btn btn-info">Check Stats</button>
