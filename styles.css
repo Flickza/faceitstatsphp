@@ -1,76 +1,81 @@
-.grey-bg {  
-    background-color: #141616;
+.grey-bg {
+  background-color: #141616;
 }
 
 body {
-    background-color: #141616;
-    color: #FF5500;
+  background-color: #141616;
+  color: #ff5500;
 }
 
-.faceitcolors{
-    color: #FF5500;
+.faceitcolors {
+  color: #ff5500;
 }
 
-.faceitcolors th, td{
-    color: #FF5500;
+.faceitcolors th,
+td {
+  color: #ff5500;
 }
 
-h1, h2, h3, h4 {
-    color: #FF5500;
+h1,
+h2,
+h3,
+h4 {
+  color: #ff5500;
 }
 
-p, small, label {
-    color:#FF5500;
+p,
+small,
+label {
+  color: #ff5500;
 }
 
 .test {
-    color: #7bff00;
+  color: #7bff00;
 }
 
-
 img {
-    position: relative;
+  position: relative;
 }
 
 h4 {
-    position: absolute;
-    left: 130px;
-    top: 27%;
+  position: absolute;
+  left: 130px;
+  top: 27%;
 }
 
 .stats {
-    position: absolute;
-    left: 130px;
-    top: 50%;
+  position: absolute;
+  left: 130px;
+  top: 50%;
 }
 
-
 .default-box {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .default-box h2 {
-    padding: 0.5rem;
-    text-transform: uppercase;
+  padding: 0.5rem;
+  text-transform: uppercase;
 }
 
-
 .default-box h1 {
-    font-size: 1rem;
-    padding: 0.5rem;
-    text-transform: uppercase;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
 }
 
 .table th {
-    margin-top: 50%;
+  margin-top: 50%;
 }
+
 
 .btn-info {
-    background-color: #141616;
-    color: #FF5500;
+  color: #ff5500;
+  background-color: #141616;
+  border-color: #ff5500;
 }
 
-input[type=text] {
-    background-color: #141616;
-    color: white;
+input[type="text"] {
+  background-color: #6d6d6d;
+  color: black;
 }
