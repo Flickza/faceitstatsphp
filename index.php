@@ -51,7 +51,7 @@
 
     if ($result) {
       echo "<script>console.log($result);</script>";
-      $cover_image = $playerArray['player']['cover_image'];
+      $cover_image = $playerArray['cover_image'];
       $player_id = $playerArray['player_id'];
       $nickname = $playerArray['nickname'];
       $avatar = $playerArray['avatar'];
