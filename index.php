@@ -50,7 +50,7 @@ if(isset($_POST['username']))
 
   if($result)
   {
-      echo "console.log($result);";
+      echo "<script>console.log($result);</script>";
       $player_id = $playerArray['player_id'];
       $nickname = $playerArray['nickname'];
       $avatar = $playerArray['avatar'];
