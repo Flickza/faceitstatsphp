@@ -32,67 +32,67 @@ $playerStats = [];
 
 if(isset($_POST['username']))
 {
-$username = $_POST['username'];
-$authorization = "Authorization: Bearer 0c22113c-50f1-4b93-9829-7960b23580f6";
-$url = "https://open.faceit.com/data/v4/players?nickname=$username";
-$ch = curl_init();
-//  Initiate curl
-// Will return the response, if false it print the response
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// Set the url
-curl_setopt($ch, CURLOPT_URL,$url);
-// SET AUTH
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization ));
-// Execute
-$result = curl_exec($ch);
+  $username = $_POST['username'];
+  $authorization = "Authorization: Bearer 0c22113c-50f1-4b93-9829-7960b23580f6";
+  $url = "https://open.faceit.com/data/v4/players?nickname=$username";
+  $ch = curl_init();
+  //  Initiate curl
+  // Will return the response, if false it print the response
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  // Set the url
+  curl_setopt($ch, CURLOPT_URL,$url);
+  // SET AUTH
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization ));
+  // Execute
+  $result = curl_exec($ch);
 
-$playerArray = json_decode($result, true);
+  $playerArray = json_decode($result, true);
 
-if($result)
-{
-    $player_id = $playerArray['player_id'];
-    $nickname = $playerArray['nickname'];
-    $avatar = $playerArray['avatar'];
-    $country = $playerArray['country'];
-    $last_infraction = $playerArray['infractions']['last_infraction_date'];
-    $afk = $playerArray['infractions']['afk'];
-    $leaver = $playerArray['infractions']['leaver'];
-    $qm_not_checkedin = $playerArray['infractions']['qm_not_checkedin'];
-    $qm_not_voted = $playerArray['infractions']['qm_not_voted'];
-    $steam = $playerArray['platforms']['steam'];
-    $region = $playerArray['games']['csgo']['region'];
-    $skilllevel = $playerArray['games']['csgo']['skill_level'];
-    $faceitelo = $playerArray['games']['csgo']['faceit_elo'];
-} else {
-  echo "Player was not found.";
-}
+  if($result)
+  {
+      $player_id = $playerArray['player_id'];
+      $nickname = $playerArray['nickname'];
+      $avatar = $playerArray['avatar'];
+      $country = $playerArray['country'];
+      $last_infraction = $playerArray['infractions']['last_infraction_date'];
+      $afk = $playerArray['infractions']['afk'];
+      $leaver = $playerArray['infractions']['leaver'];
+      $qm_not_checkedin = $playerArray['infractions']['qm_not_checkedin'];
+      $qm_not_voted = $playerArray['infractions']['qm_not_voted'];
+      $steam = $playerArray['platforms']['steam'];
+      $region = $playerArray['games']['csgo']['region'];
+      $skilllevel = $playerArray['games']['csgo']['skill_level'];
+      $faceitelo = $playerArray['games']['csgo']['faceit_elo'];
+  } else {
+    echo "Player was not found.";
+  }
 
 
-$statsurl = "https://open.faceit.com/data/v4/players/$player_id/stats/csgo";
-curl_setopt($ch, CURLOPT_URL,$statsurl);
-$result = curl_exec($ch);
-$playerStats = json_decode($result, true);
-$totalMVPs = 0;
-$recentResults = [];
-if($playerStats)
-{
-    $lifetimeKD = $playerStats['lifetime']['Average K/D Ratio'];
-    $lifetimeMatches = $playerStats['lifetime']['Matches'];
-    $lifetimeWinrate = $playerStats['lifetime']['Win Rate %'];
-    $lifetimeWinstreak = $playerStats['lifetime']['Longest Win Streak'];
-    $lifetimeAvgKD = $playerStats['lifetime']['Average K/D Ratio'];
-    $lifetimeAvgHS = $playerStats['lifetime']['Average Headshots %'];
-    $lifetimeWins = $playerStats['lifetime']['Wins'];
-    $lifetimeLosses = $lifetimeMatches - $lifetimeWins;
-    for ($i=0; $i < 8; $i++) { 
-        #var_dump($playerStats['segments'][$i]['stats']['MVPs']);
-        $totalMVPs += $playerStats['segments'][$i]['stats']['MVPs'];
-    }
+  $statsurl = "https://open.faceit.com/data/v4/players/$player_id/stats/csgo";
+  curl_setopt($ch, CURLOPT_URL,$statsurl);
+  $result = curl_exec($ch);
+  $playerStats = json_decode($result, true);
+  $totalMVPs = 0;
+  $recentResults = [];
+  if($playerStats)
+  {
+      $lifetimeKD = $playerStats['lifetime']['Average K/D Ratio'];
+      $lifetimeMatches = $playerStats['lifetime']['Matches'];
+      $lifetimeWinrate = $playerStats['lifetime']['Win Rate %'];
+      $lifetimeWinstreak = $playerStats['lifetime']['Longest Win Streak'];
+      $lifetimeAvgKD = $playerStats['lifetime']['Average K/D Ratio'];
+      $lifetimeAvgHS = $playerStats['lifetime']['Average Headshots %'];
+      $lifetimeWins = $playerStats['lifetime']['Wins'];
+      $lifetimeLosses = $lifetimeMatches - $lifetimeWins;
+      for ($i=0; $i < 8; $i++) { 
+          #var_dump($playerStats['segments'][$i]['stats']['MVPs']);
+          $totalMVPs += $playerStats['segments'][$i]['stats']['MVPs'];
+      }
 
-} else {
-  echo "Player was not found.";
-}
-curl_close($ch);
+  } else {
+    echo "Player was not found.";
+  }
+  curl_close($ch);
 }
 
 ?>
@@ -126,6 +126,7 @@ curl_close($ch);
 <form method="POST" action="" class="form-inline" style="margin-top: 1.5rem;">
   <div class="form-group">
     <input type="Username" id="inputUsername6" class="form-control mx-sm-3" name="username" aria-describedby="UsernameHelpInline">
+    <span><p style="color: grey">*Case sensitive.</p></span>
     <button type="submit" class="btn btn-info">Check Stats</button>
   </div>
 </form>
@@ -181,8 +182,8 @@ curl_close($ch);
                         <h5><?php echo $lifetimeKD; ?></h5>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <small class="text-muted">HS RATE</small>
-                        <h5><?php echo $lifetimeAvgHS; ?></h5>
+                        <small class="text-muted">HS% RATE</small>
+                        <h5><?php echo $lifetimeAvgHS . "%"; ?></h5>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
                         <small class="text-muted">LONGEST WIN STREAK</small>
