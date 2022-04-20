@@ -142,7 +142,7 @@
     <div class="grey-bg container">
       <section id="minimal-statistics">
         <div class="row" style="display: inline;">
-          <div class="col-12 mt-3 mb-1 player" style="background: url(<?php echo $cover_image; ?>) no-repeat right top cover;">
+          <div class="col-12 mt-3 mb-1 player" style="background: url(<?php echo $cover_image; ?>) no-repeat cover;">
             <img src="<?php echo $avatar; ?>" class="rounded-circle" alt="<?php echo $nickname . "'s Avatar"; ?>" height="100px" width="100px">
             <h4 class="text-uppercase">Stats for player <a href="https://www.faceit.com/en/players/<?php echo $username; ?>" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Go to faceit profile."><?php echo $username ?></a></h4>
             <p class="stats">Recent Result
