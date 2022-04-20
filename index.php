@@ -140,12 +140,18 @@
   if ($playerStats and $playerArray) {
   ?>
     <div class="grey-bg container">
-      <section id="minimal-statistics">
+      <section id="minimal-statistics" style="
+          background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.7) 100%), url(<?php echo $cover_image; ?>);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          height: 180px;
+          ">
         <div class="row" style="display: inline;">
-          <div class="col-12 mt-3 mb-1 player" style="background: url(<?php echo $cover_image; ?>) no-repeat cover;">
+          <div class="col-12 mt-3 mb-1 player">
             <img src="<?php echo $avatar; ?>" class="rounded-circle" alt="<?php echo $nickname . "'s Avatar"; ?>" height="100px" width="100px">
             <h4 class="text-uppercase">Stats for player <a href="https://www.faceit.com/en/players/<?php echo $username; ?>" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Go to faceit profile."><?php echo $username ?></a></h4>
-            <p class="stats">Recent Result
+            <p class="stats" style="margin-top: 5px;">Recent Result
               <br>
               <span class="recentLW">
                 <?php
@@ -180,7 +186,7 @@
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-2">
               <small class="text-muted">K / D</small>
-              <h5><?php echo $lifetimeKD . "K/D"; ?></h5>
+              <h5><?php echo $lifetimeKD . " K/D"; ?></h5>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-2">
               <small class="text-muted">HS% RATE</small>

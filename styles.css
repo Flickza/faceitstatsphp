@@ -85,3 +85,20 @@ input[type="text"],input[type="text"]:active {
   border-color: #1a1d20;
   color: white;
 }
+
+#minimal-statistics {
+  border-radius: 11px;
+  position: relative;
+  color: #ff5500;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+#minimal-statistics::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -5px;
+  border-radius: 16px;
+  background: linear-gradient(220.94deg, #ff5500 30%, #b93e01 70%);
+}
