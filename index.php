@@ -175,11 +175,11 @@ if(isset($_POST['username']))
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
                         <small class="text-muted">WIN RATE</small>
-                        <h5><?php echo $lifetimeWinrate; ?></h5>
+                        <h5><?php echo $lifetimeWinrate . "%"; ?></h5>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
                         <small class="text-muted">K / D</small>
-                        <h5><?php echo $lifetimeKD; ?></h5>
+                        <h5><?php echo $lifetimeKD . "K/D"; ?></h5>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
                         <small class="text-muted">HS% RATE</small>
