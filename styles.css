@@ -74,6 +74,11 @@ h4 {
   background-color: #141616;
   border-color: #ff5500;
 }
+.btn-faceit:hover {
+    color: white;
+    background-color: #141616;
+    border-color: #ff5500;
+  }
 
 input[type="text"] {
   background-color: #6d6d6d;
