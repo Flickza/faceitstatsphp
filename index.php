@@ -31,7 +31,7 @@
   <title>Faceit Player Statistics</title>
   <?php
   $playerStats = [];
-include 'config.php';
+  include 'config.php';
   if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $authorization = $TOKEN;
@@ -125,13 +125,10 @@ include 'config.php';
         <center>
           <form method="POST" action="" style="margin-top: 1.5rem;">
             <div class="form-group">
-              <input type="text" style="width: 250px;" id="inputUsername6" class="form-control mx-sm-3" name="username" aria-describedby="UsernameHelpInline">
+              <input type="text" style="width: 250px;" id="inputUsername6" placeholder="Player alias (case sensitive)" class="form-control mx-sm-3" name="username" aria-describedby="UsernameHelpInline">
               <button type="submit" class="btn btn-faceit">Check Stats</button>
             </div>
           </form>
-          <span>
-            <p style="color: grey">*Case sensitive.</p>
-          </span>
         </center>
       </div>
     </div>
