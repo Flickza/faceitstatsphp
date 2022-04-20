@@ -1,0 +1,66 @@
+.grey-bg {  
+    background-color: #141616;
+}
+
+body {
+    background-color: #141616;
+    color: #FF5500;
+}
+
+.faceitcolors{
+    color: #FF5500;
+}
+
+.faceitcolors th, td{
+    color: #FF5500;
+}
+
+h1, h2, h3, h4 {
+    color: #FF5500;
+}
+
+p, small, label {
+    color:#FF5500;
+}
+
+.test {
+    color: #7bff00;
+}
+
+
+img {
+    position: relative;
+}
+
+h4 {
+    position: absolute;
+    left: 130px;
+    top: 27%;
+}
+
+.stats {
+    position: absolute;
+    left: 130px;
+    top: 50%;
+}
+
+
+.default-box {
+    margin-bottom: 1rem;
+}
+
+.default-box h2 {
+    padding: 0.5rem;
+    text-transform: uppercase;
+}
+
+
+.default-box h1 {
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+}
+
+.table th {
+    margin-top: 50%;
+}
