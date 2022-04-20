@@ -31,10 +31,10 @@
   <title>Faceit Player Statistics</title>
   <?php
   $playerStats = [];
-
+include 'config.php';
   if (isset($_POST['username'])) {
     $username = $_POST['username'];
-    $authorization = "Authorization: Bearer 0c22113c-50f1-4b93-9829-7960b23580f6";
+    $authorization = "$TOKEN";
     $url = "https://open.faceit.com/data/v4/players?nickname=$username";
     $ch = curl_init();
     //  Initiate curl
