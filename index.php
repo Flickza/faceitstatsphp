@@ -34,7 +34,7 @@
 include 'config.php';
   if (isset($_POST['username'])) {
     $username = $_POST['username'];
-    $authorization = "$TOKEN";
+    $authorization = $TOKEN;
     $url = "https://open.faceit.com/data/v4/players?nickname=$username";
     $ch = curl_init();
     //  Initiate curl
