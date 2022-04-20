@@ -51,6 +51,7 @@ if(isset($_POST['username']))
   if($result)
   {
       echo "<script>console.log($result);</script>";
+      $cover_image = $playerArray['player']['cover_image'];
       $player_id = $playerArray['player_id'];
       $nickname = $playerArray['nickname'];
       $avatar = $playerArray['avatar'];
@@ -142,7 +143,7 @@ if(isset($_POST['username']))
 <div class="grey-bg container">
   <section id="minimal-statistics">
     <div class="row" style="display: inline;">
-      <div class="col-12 mt-3 mb-1">
+      <div class="col-12 mt-3 mb-1" style="background-image: <?php echo $cover_image; ?>;">
       <img src="<?php echo $avatar; ?>" class="rounded-circle" alt="<?php echo $nickname. "'s Avatar"; ?>" height="100px" width="100px">
        <h4 class="text-uppercase">Stats for player <a href="https://www.faceit.com/en/players/<?php echo $username;?>" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Go to faceit profile."><?php echo $username ?></a></h4>
         <p class="stats">Recent Result
