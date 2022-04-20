@@ -126,9 +126,9 @@ if(isset($_POST['username']))
 <form method="POST" action="" class="form-inline" style="margin-top: 1.5rem;">
   <div class="form-group">
     <input type="Username" id="inputUsername6" class="form-control mx-sm-3" name="username" aria-describedby="UsernameHelpInline">
-    <span><p style="color: grey">*Case sensitive.</p></span>
     <button type="submit" class="btn btn-info">Check Stats</button>
   </div>
+  <span><p style="color: grey">*Case sensitive.</p></span>
 </form>
 </center>
 </div>
